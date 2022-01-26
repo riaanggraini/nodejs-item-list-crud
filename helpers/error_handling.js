@@ -1,28 +1,40 @@
-const response = required('./response');
+const response = require('./response');
 
-const badRequest = (res, message) => {
-  const type = 'invalid_request_error';
-  res.status(400).json(response(message, [], type));
+const ok =(halt, message, data = []) => {
+  const type = 'success';
+  return halt.response(response(message, data, type, false)).code(200); 
 };
 
-const notFound = (res, message) => {
-  const type = 'invalid_request_error';
-  res.status(404).json(response(message, [], type));
+const created =(halt, message, data = []) => {
+  const type = 'success';
+  return halt.response(response(message, data, type, false)).code(201); 
 };
 
-const internalError = (res, message) => {
+const badRequest = (halt, message) => {
+  const type = 'invalid_request_error';
+  return halt.response(response(message, [], type)).code(400);
+};
+
+const notFound = (halt, message) => {
+  const type = 'invalid_request_error';
+  return halt.response(response(message, [], type)).code(404);
+};
+
+const internalError = (halt, message) => {
   const type = 'api_error';
-  res.status(500).json(response(message, [], type));
+  return halt.response(response(message, [], type)).code(500);
 };
 
-const authenticationFailed = (res, message) => {
+const authenticationFailed = (halt, message) => {
   const type = 'authentication_error';
-  res.status(401).json(response(message, [], type));
+  return halt.response(response(message, [], type)).code(401);
 };
 
 module.exports = {
+  ok,
+  created,
   badRequest,
   notFound,
   internalError,
   authenticationFailed,
-}
+};

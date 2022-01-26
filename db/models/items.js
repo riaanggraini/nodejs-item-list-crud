@@ -14,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   items.init({
-    id: DataTypes.STRING,
+    id: {
+      type: DataTypes.STRING,
+      primaryKey: true
+    },
     name: DataTypes.STRING,
     SKU: DataTypes.STRING,
     desc: DataTypes.STRING

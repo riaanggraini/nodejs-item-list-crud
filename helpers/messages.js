@@ -1,6 +1,7 @@
 
 const MESSAGE = (key) => {
   const success = `${key} success`;
+  const created = `${key} created successfuly`;
   const incompleteKey = `Missing required key: ${key}`;
   const incompleteValue = `Missing require value: ${key}`;
   const invalidEmailOrPassword = 'Invalid email/phone number or password';
@@ -14,16 +15,17 @@ const MESSAGE = (key) => {
   const invalidOption = `Value is outside option ${key}`;
   const loginError = 'Failed to login';
   const unathorization = 'failed to unathorize';
+  const serverError = 'Internal Server Error';
 
   return message = {
     success,
+    created,
     incompleteKey,
     invalidEmailOrPassword,
     incompleteValue,
     invalidType,
     notFoundResource,
     errorFindResource,
-    invalidFormat,
     alreadyUsed,
     invalidCreateResource,
     invalidOption,
@@ -31,6 +33,7 @@ const MESSAGE = (key) => {
     errorUpdateResource,
     loginError,
     unathorization,
+    serverError
   };
 };
 
