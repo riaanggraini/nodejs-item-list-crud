@@ -2,17 +2,14 @@
 const MESSAGE = (key) => {
   const success = `${key} success`;
   const created = `${key} created successfuly`;
-  const incompleteKey = `Missing required key: ${key}`;
-  const incompleteValue = `Missing require value: ${key}`;
+  const updated = `${key} updated successfuly`;
+  const deleted = `${key} deleted successfuly`;
+  const incompleteKeyOrValue = `Missing required key or value: ${key}`;
   const invalidEmailOrPassword = 'Invalid email/phone number or password';
   const invalidType = `Value is invalid data type: ${key}`;
-  const notFoundResource = `Resource not found: ${key}`;
-  const errorFindResource = `Failed find resource: ${key}`;
-  const errorUpdateResource = `Failed update resource:${key} `;
-  const errorDeleteResource = `Failed delete resource: ${key}`;
-  const alreadyUsed = `value is duplicate: ${key}`;
+  const invalidFormat = `Value is invalid format: ${key}`;
+  const notFoundResource = `${key} not found in our database`;
   const invalidCreateResource = `invalid create resource: ${key}`;
-  const invalidOption = `Value is outside option ${key}`;
   const loginError = 'Failed to login';
   const unathorization = 'failed to unathorize';
   const serverError = 'Internal Server Error';
@@ -20,17 +17,14 @@ const MESSAGE = (key) => {
   return message = {
     success,
     created,
-    incompleteKey,
+    updated,
+    deleted,
+    incompleteKeyOrValue,
     invalidEmailOrPassword,
-    incompleteValue,
     invalidType,
+    invalidFormat,
     notFoundResource,
-    errorFindResource,
-    alreadyUsed,
     invalidCreateResource,
-    invalidOption,
-    errorDeleteResource,
-    errorUpdateResource,
     loginError,
     unathorization,
     serverError
