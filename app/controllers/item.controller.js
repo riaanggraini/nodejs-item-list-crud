@@ -11,7 +11,7 @@ const getItems = async(request, h)=>{
     
     return responseHandler.ok(h, message('items').success, data);
   }catch(err){
-    return responseHandler.internalError(h, message().serverError);
+    return responseHandler.internalError(h, message().serverError, err);
   }
 };
 

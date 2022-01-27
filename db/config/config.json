@@ -8,8 +8,8 @@
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "anggraini99",
+    "database": "crud-list",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

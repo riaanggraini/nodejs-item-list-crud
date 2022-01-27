@@ -7,7 +7,7 @@ const authentication = async(decoded, request, h)=>{
     // check if user exist
     const user = await authQueries.getUserCred(decoded.data.email);
     if(user.length === 0){
-      return { response: responseHandler.authenticationFailed(h, message('user').notFoundResource)};
+      return {  isValid: false , response: responseHandler.authenticationFailed(h, message('user').notFoundResource)};
     }
     return { isValid: true};
   }catch(err){
